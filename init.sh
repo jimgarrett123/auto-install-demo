@@ -339,11 +339,10 @@ oc new-project redhat-iot --display-name="Red Hat IoT Demo"
 oc policy add-role-to-user view system:serviceaccount:$(oc project -q):default -n $(oc project -q)
 ./openshift-deploy.sh
 
-oc login -u admin:admin
 oc create -n openshift -f https://raw.githubusercontent.com/jboss-openshift/application-templates/master/jboss-image-streams.json
 oc create -n openshift -f https://raw.githubusercontent.com/openshift/origin/master/examples/image-streams/image-streams-centos7.json
 
-
+oc policy add-role-to-user admin openshift-dev
 
 echo
 echo "===================================================="
