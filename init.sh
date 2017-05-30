@@ -330,6 +330,22 @@ if [ $? -ne 0 ]; then
 fi
 
 echo
+echo "Creating Red Hat IoT Demo Project..."
+echo
+
+git clone https://github.com/redhat-iot/summit2017
+cd summit2017
+oc new-project redhat-iot --display-name="Red Hat IoT Demo"
+oc policy add-role-to-user view system:serviceaccount:$(oc project -q):default -n $(oc project -q)
+./openshift-deploy.sh
+
+oc login -u admin:admin
+oc create -n openshift -f https://raw.githubusercontent.com/jboss-openshift/application-templates/master/jboss-image-streams.json
+oc create -n openshift -f https://raw.githubusercontent.com/openshift/origin/master/examples/image-streams/image-streams-centos7.json
+
+
+
+echo
 echo "===================================================="
 echo "=                                                  ="
 echo "= Install complete, get ready to rock your Cloud.  ="
