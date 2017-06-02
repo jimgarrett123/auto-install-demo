@@ -1,5 +1,7 @@
-OpenShift Container Platform Install Demo
+Auto Install IoT Demo with OpenShift
 =========================================
+This project adds IoT demo setup to the OpenShift install demo. 
+
 If you are looking to develop containerized applications, the OpenShift Container Plaform (OCP) can help you by providing 
 private PaaS (Cloud) environment you can install locally. It includes the same container development and run-time 
 tools used to create and deploy containers for large data centers. 
