@@ -17,6 +17,7 @@ listed here and the install provides pointers to downloads if missing:
 
 Installation Steps
 -----------------------
+```
 $ git clone -b Summit-Demo-Setup https://github.com/redhat-iot/ocp-install-demo
 $ cd ocp-install-demo
 $ ./init.sh
@@ -27,6 +28,7 @@ https://192.168.99.101:8443
 user: openshift-dev                
 password: devel  
 
+```
 Notes
 -----
 
