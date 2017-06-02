@@ -1,6 +1,6 @@
 Auto Install IoT Demo with OpenShift
 =========================================
-This project adds IoT demo to the original OpenShift install demo from Eric, Andrew. It first installs OpenShift on the local system and then creates IoT demo project to this OpenShift instance. 
+This project adds IoT demo to the [OpenShift install demo](https://github.com/redhatdemocentral/ocp-install-demo). It first installs OpenShift on the local system and then creates IoT demo project to this OpenShift instance. All of this is done by running just one script (thanks Eric, Andrew!).
 
 This project requires a docker engine, OpenShift command line tools and VirtualBox, but these checks happen when you run the
 installation and point you to what is missing.
