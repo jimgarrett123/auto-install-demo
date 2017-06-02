@@ -1,44 +1,34 @@
 Auto Install IoT Demo with OpenShift
 =========================================
-This project adds IoT demo setup to the OpenShift install demo. 
-
-If you are looking to develop containerized applications, the OpenShift Container Plaform (OCP) can help you by providing 
-private PaaS (Cloud) environment you can install locally. It includes the same container development and run-time 
-tools used to create and deploy containers for large data centers. 
+This project adds IoT demo to the original OpenShift install demo from Eric, Andrew. It first installs OpenShift on the local system and then creates IoT demo project to this OpenShift instance. 
 
 This project requires a docker engine, OpenShift command line tools and VirtualBox, but these checks happen when you run the
-installation and point you to what is missing. It also checks that you have the right versions running too.
+installation and point you to what is missing.
 
 Pro Tip: Pay close attention to conosle output, will guide you to dependencies you need if missing. These dependencies are 
 listed here and the install provides pointers to downloads if missing:
 
    ```
-   1. VirtualBox for Windows and OSX
+   1. VirtualBox
    2. Docker engine version 17.03
    3. OpenShift Client (oc) v3.5.5.5
    ```
 
 
-Install on your machine
+Installation Steps
 -----------------------
-1. [Download and unzip.](https://github.com/redhatdemocentral/ocp-install-demo/archive/master.zip)
+$ git clone -b Summit-Demo-Setup https://github.com/redhat-iot/ocp-install-demo
+$ cd ocp-install-demo
+$ ./init.sh
 
-2. Run 'init.sh' or 'init.bat' file, then sit back. (Note: 'init.bat' must be run with Administrative privileges.)
-
-3. Follow displayed instructions to log in to your brand new OpenShift Container Platform!
-
+Login to web console at: 
+https://192.168.99.101:8443
+ 
+user: openshift-dev                
+password: devel  
 
 Notes
 -----
-Log in to the OCP console with:
-   
-   ```
-   Developer user:  openshift-dev
-   Developer pass:  devel
-
-   Admin user: admin
-   Admin pass: admin
-   ```
 
 If you recieve the following error, on Linux:
 
@@ -62,16 +52,6 @@ installations. If you re-run it, it removes old 'openshift' machines and reinsta
 Supporting Articles
 -------------------
 - [Cloud Happiness - How To Get OpenShift Container Platform v3.5 Installed in Minutes](http://www.schabell.org/2017/05/cloud-happiness-how-to-get-openshift.html)
-
-- [Get hands-on with AppDev Cloud free online workshop.](http://appdevcloudworkshop.github.io)
-
-- [Cloud Happiness - OpenShift Container Platform Install on Windows, why wait?](http://www.schabell.org/2017/03/cloud-happiness-openshift-container-platform-windows-install.html)
-
-- [Cloud Happiness - OpenShift Container Platform v3.4 install demo update](http://www.schabell.org/2017/02/cloud-happiness-openshift-container-platform-install-updated.html)
-
-- [Holiday Homework - Red Hat Cloud demo updates](http://www.schabell.org/2016/12/holiday-homework-redhat-cloud-demo-updates.html)
-
-- [3 Steps to Cloud Happiness with OpenShift Container Platform](http://www.schabell.org/2016/11/3-steps-to-cloud-happiness-with-ocp.html)
 
 
 Released versions
