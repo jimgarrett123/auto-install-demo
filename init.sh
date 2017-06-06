@@ -123,7 +123,7 @@ fi
 
 echo "Setting up OpenShift docker machine..."
 echo
-docker-machine create --driver virtualbox --virtualbox-cpu-count "2" --virtualbox-memory "$VBOX_MEMORY" --engine-insecure-registry 172.30.0.0/16 --virtualbox-boot2docker-url https://github.com/boot2docker/boot2docker/releases/download/v1.13.1/boot2docker.iso openshift 
+docker-machine create --driver virtualbox --virtualbox-cpu-count "4" --virtualbox-memory "$VBOX_MEMORY" --engine-insecure-registry 172.30.0.0/16 --virtualbox-boot2docker-url https://github.com/boot2docker/boot2docker/releases/download/v1.13.1/boot2docker.iso openshift 
 
 if [ $? -ne 0 ]; then
 		echo
