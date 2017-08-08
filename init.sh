@@ -343,6 +343,7 @@ oc policy add-role-to-user view system:serviceaccount:$(oc project -q):default -
 oc create -n openshift -f https://raw.githubusercontent.com/openshift/origin/master/examples/image-streams/image-streams-centos7.json
 
 oc policy add-role-to-user admin openshift-dev
+oc start-build dashboard --follow
 
 echo
 echo "===================================================="
