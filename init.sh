@@ -217,117 +217,27 @@ if [ $? -ne 0 ]; then
 	fi
 fi
 
-echo
-echo "Updating Fuse image streams..."
-echo
-oc create -n openshift -f 'https://raw.githubusercontent.com/jboss-fuse/application-templates/master/fis-image-streams.json'
+# echo
+# echo "Updating Decision Server templates..."
+# echo
+# oc create -n openshift -f 'https://raw.githubusercontent.com/jboss-openshift/application-templates/master/decisionserver/decisionserver63-basic-s2i.json'
 
-if [ $? -ne 0 ]; then
-	echo
-	echo "Problem with accessing Fuse Integration product streams for OCP..."
-	echo
-  echo "Trying again..."
-	echo
-	sleep 10
-  oc create -n openshift -f 'https://raw.githubusercontent.com/jboss-fuse/application-templates/master/fis-image-streams.json'
+# if [ $? -ne 0 ]; then
+#	echo
+#	echo "Problem with accessing JBoss BRMS product streams for OCP..."
+#	echo
+#  echo "Trying again..."
+#	echo
+#	sleep 10
+#  oc create -n openshift -f 'https://raw.githubusercontent.com/jboss-openshift/application-templates/master/decisionserver/decisionserver63-basic-s2i.json'
 	
-	if [ $? -ne 0 ]; then
-		echo "Failed again, exiting, check output messages and network connectivity before running install again..."
-		echo
-		docker-machine rm -f openshift
-		exit
-	fi
-fi
-
-echo
-echo "Updating EAP templates..."
-echo
-oc create -n openshift -f 'https://raw.githubusercontent.com/jboss-openshift/application-templates/master/eap/eap70-basic-s2i.json'
-
-if [ $? -ne 0 ]; then
-	echo
-	echo "Problem with accessing JBoss EAP product streams for OCP..."
-	echo
-  echo "Trying again..."
-	echo
-	sleep 10
-  oc create -n openshift -f 'https://raw.githubusercontent.com/jboss-openshift/application-templates/master/eap/eap70-basic-s2i.json'
-	
-	if [ $? -ne 0 ]; then
-		echo "Failed again, exiting, check output messages and network connectivity before running install again..."
-		echo
-		docker-machine rm -f openshift
-		exit
-	fi
-fi
-
-echo
-echo "Updating Decision Server templates..."
-echo
-oc create -n openshift -f 'https://raw.githubusercontent.com/jboss-openshift/application-templates/master/decisionserver/decisionserver63-basic-s2i.json'
-
-if [ $? -ne 0 ]; then
-	echo
-	echo "Problem with accessing JBoss BRMS product streams for OCP..."
-	echo
-  echo "Trying again..."
-	echo
-	sleep 10
-  oc create -n openshift -f 'https://raw.githubusercontent.com/jboss-openshift/application-templates/master/decisionserver/decisionserver63-basic-s2i.json'
-	
-	if [ $? -ne 0 ]; then
-		echo "Failed again, exiting, check output messages and network connectivity before running install again..."
-		echo
-		docker-machine rm -f openshift
-		exit
-	fi
-fi
-
-echo
-echo "Updating RHEL 7 image streams..."
-echo
-oc delete -n openshift -f 'https://raw.githubusercontent.com/openshift/openshift-ansible/master/roles/openshift_examples/files/examples/v1.4/image-streams/image-streams-rhel7.json'
-oc create -n openshift -f 'https://raw.githubusercontent.com/openshift/openshift-ansible/master/roles/openshift_examples/files/examples/v1.4/image-streams/image-streams-rhel7.json'
-
-if [ $? -ne 0 ]; then
-	echo
-	echo "Problem with accessing RHEL product streams for OCP..."
-	echo
-  echo "Trying again..."
-	echo
-	sleep 10
-  oc delete -n openshift -f 'https://raw.githubusercontent.com/openshift/openshift-ansible/master/roles/openshift_examples/files/examples/v1.4/image-streams/image-streams-rhel7.json'
-  oc create -n openshift -f 'https://raw.githubusercontent.com/openshift/openshift-ansible/master/roles/openshift_examples/files/examples/v1.4/image-streams/image-streams-rhel7.json'
-	
-	if [ $? -ne 0 ]; then
-		echo "Failed again, exiting, check output messages and network connectivity before running install again..."
-		echo
-		docker-machine rm -f openshift
-		exit
-	fi
-fi
-
-echo
-echo "Update .Net image streams..."
-echo
-oc create -n openshift -f 'https://raw.githubusercontent.com/redhat-developer/s2i-dotnetcore/master/dotnet_imagestreams.json'
-
-if [ $? -ne 0 ]; then
-	echo
-	echo "Problem with accessing .Net image streams for OCP..."
-	echo
-  echo "Trying again..."
-	echo
-	sleep 10
-  oc create -n openshift -f 'https://raw.githubusercontent.com/redhat-developer/s2i-dotnetcore/master/dotnet_imagestreams.json'
-	
-	if [ $? -ne 0 ]; then
-		echo "Failed again, exiting, check output messages and network connectivity before running install again..."
-		echo
-		docker-machine rm -f openshift
-		exit
-	fi
-fi
+#	if [ $? -ne 0 ]; then
+#		echo "Failed again, exiting, check output messages and network connectivity before running install again..."
+#		echo
+#		docker-machine rm -f openshift
+#		exit
+#	fi
+# fi
 
 echo
 echo "Creating Red Hat IoT Demo Project..."
